@@ -17,9 +17,9 @@ def hashfile(path, blocksize = 65536):
 def make_duplicate_list(filepath):
     unique_hashes = {}
     duplicate_files = {}
-    for dirName, subdirList, fileList in os.walk(filepath):
-        for fname in fileList:
-            path = os.path.join(dirName, fname)
+    for dir_name, subdir_list, file_list in os.walk(filepath):
+        for filename in file_list:
+            path = os.path.join(dir_name, filename)
             file_hash = hashfile(path)
             if file_hash in unique_hashes:
                 if file_hash not in duplicate_files:
