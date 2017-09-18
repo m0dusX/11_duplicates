@@ -23,8 +23,8 @@ def make_duplicate_list(filepath):
             file_hash = hashfile(path)
             if file_hash in unique_hashes:
                 if file_hash not in duplicate_files:
-                    #more than 2 dublicates with same has can exist, so list 
-                    #of filepaths is created
+                    #More than 2 duplicate files with same hash can exist,  
+                    #so list of filepaths is created.
                     duplicate_files[file_hash] = []
                     duplicate_files[file_hash].append(unique_hashes[file_hash])
                 duplicate_files[file_hash].append(path)
