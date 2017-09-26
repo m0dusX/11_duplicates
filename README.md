@@ -1,6 +1,8 @@
 # Anti-Duplicator
 
-This script detects duplicate files and prints list of them.
+This script detects duplicate files in specified folder and prints list of them. The following information about each set of doublicates is printed to console:
+1) MD5 hash, which can be used afterwards in another programms
+2) Full path to each dublicate
 
 # Quickstart
 
