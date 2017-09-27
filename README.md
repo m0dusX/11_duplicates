@@ -23,9 +23,11 @@ Output data example:
 1) 2 files with 76e6ad8e57f2a89b602e0cebd2ea4f14 MD5 hash were found:
     1. C:\TEST_FOLDER\TEST_SUBDOLER\Новый текстовый документ.txt
     2. C:\TEST_FOLDER\TEST_SUBDOLER\TEST_SUBFOLER_2\ООО.txt
+    
 2) 2 files with e3aeaa1bdffc84b1040e6a7be44e6132 MD5 hash were found:
     1. C:\TEST_FOLDER\TEST_SUBDOLER\TEST_SUBFOLER_2\ksmdfsdf.txt
     2. C:\TEST_FOLDER\TEST_SUBDOLER\TEST_SUBFOLER_2\TEST_SUBFOLER_3_1\kssdasd.txt
+    
 3) 2 files with 3f9e29fe88c9322ce8095fe5ee8624b6 MD5 hash were found:
     1. C:\TEST_FOLDER\___thumbnails.bat
     2. C:\TEST_FOLDER\TEST_SUBDOLER\TEST_SUBFOLER_2\TEST_SUBFOLER_3_1\___thumbnails.bat
