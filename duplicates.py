@@ -35,15 +35,15 @@ def make_duplicate_list(filepath):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description="duplicates detector")
-    parser.add_argument("path_to_folder",
-                        help="path to folder containig duplicates")
+    parser = argparse.ArgumentParser(description='duplicates detector')
+    parser.add_argument('path_to_folder',
+                        help='path to folder containig duplicates')
     args = parser.parse_args()
     path = args.path_to_folder
     duplicates = make_duplicate_list(path)
     for idx, (key, value) in enumerate(duplicates.items(), 1):
-        print("{}) {} files with {} MD5 hash were " +
-              "found:".format(idx, len(value), key))
+        print('{}) {} files with {} MD5 hash were ' +
+              'found:'.format(idx, len(value), key))
         for idx, folder in enumerate(value, 1):
-            print("    {}. {}".format(idx, folder))
+            print('    {}. {}'.format(idx, folder))
     sys.exit()
