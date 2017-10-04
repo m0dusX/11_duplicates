@@ -1,9 +1,10 @@
 import os
 import sys
 import hashlib
+import argparse
 
 
-def hashfile(path, blocksize = 65536):
+def hashfile(path, blocksize=65536):
     afile = open(path, 'rb')
     hasher = hashlib.md5()
     buf = afile.read(blocksize)
@@ -23,8 +24,8 @@ def make_duplicate_list(filepath):
             file_hash = hashfile(path)
             if file_hash in unique_hashes:
                 if file_hash not in duplicate_files:
-                    #More than 2 duplicate files with same hash can exist,  
-                    #so list of filepaths is created.
+                    # More than 2 duplicate files with same hash can exist,
+                    # so list of filepaths is created.
                     duplicate_files[file_hash] = []
                     duplicate_files[file_hash].append(unique_hashes[file_hash])
                 duplicate_files[file_hash].append(path)
@@ -34,8 +35,15 @@ def make_duplicate_list(filepath):
 
 
 if __name__ == '__main__':
-    for idx, (key, value) in enumerate(make_duplicate_list(sys.argv[1]).items(), 1):
-        print("{}) {} files with {} MD5 hash were found:".format(idx, len(value), key))
+    parser = argparse.ArgumentParser(description="duplicates detector")
+    parser.add_argument("path_to_folder",
+                        help="path to folder containig duplicates")
+    args = parser.parse_args()
+    path = args.path_to_folder
+    duplicates = make_duplicate_list(path)
+    for idx, (key, value) in enumerate(duplicates.items(), 1):
+        print("{}) {} files with {} MD5 hash were " +
+              "found:".format(idx, len(value), key))
         for idx, folder in enumerate(value, 1):
             print("    {}. {}".format(idx, folder))
     sys.exit()
